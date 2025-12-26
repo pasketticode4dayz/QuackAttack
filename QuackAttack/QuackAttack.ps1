@@ -76,7 +76,7 @@ public class KeyboardHook {
 "@ -ReferencedAssemblies System.Windows.Forms, System.Drawing
 
 # Set the sound file path
-$soundPath = "C:\Users\nathan\Documents\VSCode\Powershell\QuackAttack\Quack.wav"
+$soundPath = "$env:APPDATA\WindowsUpdate\QuackAttack\Quack.wav" # Update this variable to point to the WAV file.
 
 if (-not (Test-Path $soundPath)) {
     Write-Error "Sound file not found: $soundPath"
@@ -93,3 +93,4 @@ try {
     [KeyboardHook]::Stop()
     Write-Host "Keyboard hook stopped" -ForegroundColor Yellow
 }
+
